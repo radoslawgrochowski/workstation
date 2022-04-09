@@ -2,8 +2,3 @@
   package:
     name: git
     state: latest
-
-- name: install ffmpeg
-  package:
-    name: ffmpeg
-    state: present

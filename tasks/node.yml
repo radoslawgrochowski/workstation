@@ -16,11 +16,10 @@
     global: yes
 
 - name: setup latest lts
-  shell: n lts
+  shell: sudo n lts
 
 - name: npm
   npm:
     name: npm
     state: latest
     global: yes
-

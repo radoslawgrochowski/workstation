@@ -1,0 +1,4 @@
+- name: install ffmpeg
+  package:
+    name: ffmpeg
+    state: present

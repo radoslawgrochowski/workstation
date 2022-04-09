@@ -1,0 +1,11 @@
+- name: install stow
+  package:
+    name: stow
+    state: latest
+
+- name: clone dotfiles repo
+  become: true
+  become_user: radoslawgrochowski
+  ansible.builtin.git:
+    repo: https://github.com/radoslawgrochowski/dotfiles.git
+    dest: ~/Projects/dotfiles

@@ -6,7 +6,45 @@
       force_apt_get: true
       update_cache: true
       state: present
+
   tasks:
-    - include: tasks/core.yml
-    - include: tasks/zsh.yml
-    - include: tasks/node.yml
+    - name: core
+      include_tasks:
+        file: tasks/core.yml
+        apply:
+          tags:
+            - core
+            - always
+      tags: always
+
+    - name: zsh
+      include_tasks:
+        file: tasks/zsh.yml
+        apply:
+          tags:
+            - zsh
+      tags: always
+
+    - name: dotfiles
+      include_tasks:
+        file: tasks/dotfiles.yml
+        apply:
+          tags:
+            - dotfiles
+      tags: always
+
+    - name: node
+      include_tasks:
+        file: tasks/node.yml
+        apply:
+          tags:
+            - node
+      tags: always
+
+    - name: productivity
+      include_tasks:
+        file: tasks/productivity.yml
+        apply:
+          tags:
+            - productivity
+      tags: always
