@@ -1,0 +1,25 @@
+- name: install nodejs
+  become: true
+  package:
+    name: nodejs
+    state: present
+
+- name: install npm
+  become: true
+  package:
+    name: npm
+    state: latest
+
+- name: install n
+  npm:
+    name: n
+    global: yes
+
+- name: setup latest lts
+  shell: n lts
+
+- name: npm
+  npm:
+    name: npm
+    state: latest
+

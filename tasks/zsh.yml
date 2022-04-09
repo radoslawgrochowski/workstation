@@ -1,0 +1,7 @@
+- name: install zsh
+  package:
+    name: zsh
+    state: latest
+
+- name: change shell
+  shell: chsh -s $(which zsh)
