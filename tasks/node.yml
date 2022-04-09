@@ -22,4 +22,5 @@
   npm:
     name: npm
     state: latest
+    global: yes
 
