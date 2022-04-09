@@ -41,6 +41,14 @@
             - node
       tags: always
 
+    - name: docker
+      include_tasks:
+        file: tasks/docker.yml
+        apply:
+          tags:
+            - docker
+      tags: always
+
     - name: chrome
       include_tasks:
         file: tasks/chrome.yml

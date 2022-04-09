@@ -1,4 +1,5 @@
-- name: install ffmpeg
+- name: install various productivity tools
   package:
-    name: ffmpeg
-    state: present
+    name:
+      - ffmpeg
+    state: latest
