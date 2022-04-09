@@ -1,0 +1,23 @@
+- name: install dependencies for chrome
+  package:
+    name:
+      - software-properties-common
+      - dirmngr
+    state: latest
+
+- name: add chrome repo key
+  apt_key:
+    id: A040830F7FAC5991
+    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+    state: present
+
+- name: add chrome repo
+  apt_repository:
+    repo: 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main'
+    state: present
+    update_cache: true
+
+- name: install chrome
+  package:
+    name: google-chrome-stable
+    state: latest

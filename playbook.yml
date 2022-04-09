@@ -41,6 +41,14 @@
             - node
       tags: always
 
+    - name: chrome
+      include_tasks:
+        file: tasks/chrome.yml
+        apply:
+          tags:
+            - chrome
+      tags: always
+
     - name: productivity
       include_tasks:
         file: tasks/productivity.yml
