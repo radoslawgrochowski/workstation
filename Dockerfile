@@ -9,4 +9,4 @@ WORKDIR /home/radoslawgrochowski
 
 FROM base
 COPY . .
-CMD ["sh", "-c", "ansible-playbook $TAGS playbook.yml"]
+CMD ["sh", "-c", "sudo ansible-playbook $TAGS playbook.yml"]
