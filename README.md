@@ -8,7 +8,7 @@ and targeted at Ubuntu 20.04 LTS.
 ```shell
 $ sudo apt-get install -y ansible git
 $ git -C ~/Projects/workstation pull || git clone https://github.com/radoslawgrochowski/workstation ~/Projects/workstation
-$ ansible-playbook ~/Projects/workstation/playbook.yml
+$ sudo ansible-playbook ~/Projects/workstation/playbook.yml
 ````
 
 ## testing
