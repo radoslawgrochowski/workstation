@@ -7,7 +7,8 @@ and targeted at Ubuntu 20.04 LTS.
 
 ```shell
 $ sudo apt-get install -y ansible git
-$ 
+$ mkdir -p ~/Projects
+$ git -C ~/Projects/workspace pull ||  git clone https://github.com/radoslawgrochowski/workspace
 ````
 
 ## testing
