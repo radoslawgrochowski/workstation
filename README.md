@@ -7,15 +7,15 @@ and targeted at Ubuntu 20.04 LTS.
 
 ```shell
 $ sudo apt-get install -y ansible git
-$ mkdir -p ~/Projects
-$ git -C ~/Projects/workspace pull ||  git clone https://github.com/radoslawgrochowski/workspace
+$ git -C ~/Projects/workstation pull || git clone https://github.com/radoslawgrochowski/workstation ~/Projects/workstation
+$ ansible-playbook ~/Projects/workstation/playbook.yml
 ````
 
 ## testing
 
 ### using docker
 ```sh
-$ docker build . -t workspace && docker run --rm -it workspace bash
+$ docker build . -t workstation && docker run --rm -it workstation bash
 ```
 
 ## inspiration 
