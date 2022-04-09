@@ -9,3 +9,9 @@
   ansible.builtin.git:
     repo: https://github.com/radoslawgrochowski/dotfiles.git
     dest: ~/Projects/dotfiles
+
+- name: make dotfiles
+  become: true
+  become_user: radoslawgrochowski
+  make:
+    chdir: ~/Projects/dotfiles
