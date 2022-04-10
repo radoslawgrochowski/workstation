@@ -1,4 +1,6 @@
-- name: install git
+- name: install
   package:
-    name: git
+    name: 
+      - git
+      - i3
     state: latest
