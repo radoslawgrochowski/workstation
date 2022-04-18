@@ -3,4 +3,5 @@
     name: 
       - git
       - i3
+      - make
     state: latest
