@@ -17,6 +17,14 @@
             - always
       tags: always
 
+    - name: dotfiles
+      include_tasks:
+        file: tasks/dotfiles.yml
+        apply:
+          tags:
+            - dotfiles
+      tags: always
+
     - name: zsh
       include_tasks:
         file: tasks/zsh.yml
@@ -25,12 +33,12 @@
             - zsh
       tags: always
 
-    - name: dotfiles
+    - name: neovim 
       include_tasks:
-        file: tasks/dotfiles.yml
+        file: tasks/neovim.yml
         apply:
           tags:
-            - dotfiles
+            - neovim
       tags: always
 
     - name: node
