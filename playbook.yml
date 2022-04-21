@@ -72,3 +72,12 @@
           tags:
             - productivity
       tags: always
+
+    - name: spotify 
+      include_tasks:
+        file: tasks/spotify.yml
+        apply:
+          tags:
+            - productivity
+      tags: always
+
