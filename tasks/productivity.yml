@@ -3,4 +3,5 @@
     name:
       - ffmpeg
       - keepassxc
+      - ripgrep
     state: latest
