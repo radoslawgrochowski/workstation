@@ -1,4 +1,6 @@
 FROM ubuntu:focal AS base
+ENV DEBIAN_FRONTEND=noninteractive 
+ENV TZ=Europe/Warsaw
 RUN apt-get update
 RUN apt-get install -y ansible sudo git make
 RUN addgroup --gid 1000 radoslawgrochowski

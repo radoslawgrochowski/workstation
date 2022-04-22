@@ -1,8 +1,27 @@
-- name: install
+- name: add core packages
+  package:
+    name:
+      - gnupg2
+      - git
+      - make
+    state: latest
+
+- name: add regolith repo 
+  apt_repository:
+    codename: focal
+    repo: ppa:regolith-linux/release
+    state: present
+
+- name: add speed-ricer repo 
+  apt_repository:
+    codename: focal
+    repo: ppa:kgilmer/speed-ricer
+    state: present
+
+- name: install 
   package:
     name: 
-      - git
-      - i3
-      - make
-      - gnupg2
+      - i3-gaps
+      - polybar
     state: latest
+

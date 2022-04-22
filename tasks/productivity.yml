@@ -4,4 +4,6 @@
       - ffmpeg
       - keepassxc
       - ripgrep
+      - feh
+      - neofetch
     state: latest
