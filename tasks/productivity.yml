@@ -1,3 +1,7 @@
+- name: add shutter repository
+  apt_repository:
+    repo: ppa:shutter/ppa
+
 - name: install various productivity tools
   package:
     name:
@@ -6,4 +10,7 @@
       - ripgrep
       - feh
       - neofetch
+      - picom
+      - shutter
+      - pavucontrol
     state: latest
