@@ -24,6 +24,7 @@
       - i3-gaps
       - polybar
       - kitty
+      - htop
     state: latest
 
 - name: fonts
