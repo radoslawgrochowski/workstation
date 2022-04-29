@@ -5,3 +5,18 @@
 
 - name: change shell
   shell: chsh -s $(which zsh)
+
+- name: check oh-my-zsh 
+  become: true
+  become_user: radoslawgrochowski
+  stat:
+    path: ~/.oh-my-zsh
+  register: oh_my_stats
+
+- name: oh-my-zsh 
+  become: true
+  become_user: radoslawgrochowski
+  shell: |
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  when: not oh_my_stats.stat.exists
+
