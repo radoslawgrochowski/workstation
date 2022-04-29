@@ -23,5 +23,6 @@
     name: 
       - i3-gaps
       - polybar
+      - kitty
     state: latest
 
