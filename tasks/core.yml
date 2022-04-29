@@ -26,3 +26,8 @@
       - kitty
     state: latest
 
+- name: fonts
+  package:
+    name:
+      - fonts-ibm-plex
+    state: latest
