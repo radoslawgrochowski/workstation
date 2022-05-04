@@ -23,3 +23,28 @@
     name: npm
     state: latest
     global: yes
+
+- name: install typescript 
+  npm:
+    name: typescript
+    state: latest
+    global: yes
+
+- name: install typescript-language-server 
+  npm:
+    name: typescript-language-server
+    state: latest
+    global: yes
+
+- name: install eslint 
+  npm:
+    name: eslint
+    state: latest
+    global: yes
+
+- name: install prettier 
+  npm:
+    name: prettier
+    state: latest
+    global: yes
+
