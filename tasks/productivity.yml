@@ -13,4 +13,5 @@
       - picom
       - shutter
       - pavucontrol
+      - fd-find
     state: latest
