@@ -1,30 +1,21 @@
-- name: add core packages
-  package:
-    name:
-      - gnupg2
-      - git
-      - make
-    state: latest
-
-- name: add regolith repo 
-  apt_repository:
-    codename: focal
-    repo: ppa:regolith-linux/release
-    state: present
-
-- name: add speed-ricer repo 
-  apt_repository:
-    codename: focal
-    repo: ppa:kgilmer/speed-ricer
-    state: present
-
-- name: install 
+- name: install core packages with pacman
   package:
     name: 
+      - git
+      - make
+      - fakeroot
       - i3-gaps
-      - polybar
       - kitty
       - htop
+      - base-devel
+    state: latest
+
+- name: install core packages from aur 
+  become: true
+  become_user: radoslawgrochowski
+  kewlfft.aur.aur:
+    name: 
+      - polybar
     state: latest
 
 - name: fonts

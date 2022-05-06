@@ -1,13 +1,19 @@
-FROM ubuntu:focal AS base
-ENV DEBIAN_FRONTEND=noninteractive 
+FROM archlinux:base AS base
+LABEL maintainer="radoslawgrochowski <rg@fard.pl>"
+
+ENV container="docker"
 ENV TZ=Europe/Warsaw
-RUN apt-get update
-RUN apt-get install -y ansible sudo git make
-RUN addgroup --gid 1000 radoslawgrochowski
-RUN adduser --gecos radoslawgrochowski --uid 1000 --gid 1000 --disabled-password radoslawgrochowski
+RUN pacman -Syu --noconfirm 
+RUN pacman -S --noconfirm ansible sudo git make 
+
+RUN groupadd --gid 1000 radoslawgrochowski
+RUN useradd -m --uid 1000 --gid 1000 radoslawgrochowski
 RUN echo '%radoslawgrochowski ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER radoslawgrochowski
 WORKDIR /home/radoslawgrochowski
+
+COPY requirements.yml requirements.yml
+RUN sudo ansible-galaxy collection install -r requirements.yml
 
 FROM base
 COPY . .

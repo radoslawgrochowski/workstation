@@ -1,9 +1,9 @@
 - hosts: localhost
   pre_tasks:
-  - name: update apt
+  - name: update pacman 
     become: true
-    apt:
-      force_apt_get: true
+    community.general.pacman:
+      force: true
       update_cache: true
       state: present
 
