@@ -8,3 +8,31 @@
       - neovim
     state: latest
 
+- name: check lua-language-server 
+  stat:
+    path: /usr/local/bin/lua-language-server
+  register: lua_language_server 
+
+- name: create temp directory for lua-language-server 
+  ansible.builtin.file:
+    path: /usr/local/lua-language-server
+    state: directory
+    mode: '0755'
+  when: not lua_language_server.stat.exists
+
+- name: unarchive lua-language-server
+  unarchive: 
+    src: https://github.com/sumneko/lua-language-server/releases/download/3.2.2/lua-language-server-3.2.2-linux-x64.tar.gz
+    dest: /usr/local/lua-language-server
+    remote_src: yes
+  when: not lua_language_server.stat.exists
+
+- name: Creating a file with content
+  copy:
+    dest: /usr/local/bin/lua-language-server
+    content: |
+      #!/bin/bash
+      exec "/usr/local/lua-language-server/bin/lua-language-server" "$@"
+    mode: '0755'
+  when: not lua_language_server.stat.exists
+
