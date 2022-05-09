@@ -31,4 +31,5 @@
   package:
     name:
       - fonts-ibm-plex
+      - nerd-font-iosevka
     state: latest
