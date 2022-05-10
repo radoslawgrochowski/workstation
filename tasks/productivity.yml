@@ -2,6 +2,10 @@
   apt_repository:
     repo: ppa:shutter/ppa
 
+- name: add google-drive-ocamlfuse repository
+  apt_repository:
+    repo: ppa:alessandro-strada/ppa
+
 - name: install various productivity tools
   package:
     name:
@@ -14,4 +18,6 @@
       - shutter
       - pavucontrol
       - fd-find
+      - google-drive-ocamlfuse
     state: latest
+
