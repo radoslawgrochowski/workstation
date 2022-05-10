@@ -8,6 +8,13 @@
       - neovim
     state: latest
 
+- name: clone packer repo
+  become: true
+  become_user: radoslawgrochowski
+  ansible.builtin.git:
+    repo: https://github.com/wbthomason/packer.nvim
+    dest: ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
 - name: check lua-language-server 
   stat:
     path: /usr/local/bin/lua-language-server
