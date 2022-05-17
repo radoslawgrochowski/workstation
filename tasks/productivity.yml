@@ -20,5 +20,6 @@
       - fd-find
       - xcwd
       - google-drive-ocamlfuse
+      - peek
     state: latest
 
