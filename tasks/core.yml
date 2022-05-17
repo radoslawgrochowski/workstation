@@ -25,6 +25,7 @@
       - polybar
       - kitty
       - htop
+      - xclip
     state: latest
 
 - name: fonts
