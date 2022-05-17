@@ -13,3 +13,5 @@ run: ansible
 test:
 	docker build . -t workstation && docker run --rm -it workstation bash 
 
+install:
+	sudo ansible-galaxy install -r requirements.yml

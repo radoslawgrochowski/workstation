@@ -81,3 +81,18 @@
             - productivity
       tags: always
 
+    - name: golang
+      include_tasks:
+        file: tasks/go.yml
+        apply:
+          tags: go 
+      tags: go 
+
+    - name: jira-cli
+      include_tasks:
+        file: tasks/jira-cli.yml
+        apply:
+          tags: jira-cli 
+      tags:
+        - work-only 
+        - jira-cli

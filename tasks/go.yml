@@ -1,0 +1,8 @@
+- name: add go $PATH
+  copy:
+    dest: /etc/profile.d/go-lang-path.sh
+    content: 'PATH=$PATH:/usr/local/go/bin'
+  
+- name: install golang 
+  include_role:
+    name: fubarhouse.golang
