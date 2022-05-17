@@ -36,6 +36,12 @@
     state: latest
     global: yes
 
+- name: install neovim
+  npm:
+    name: neovim
+    state: latest
+    global: yes
+
 - name: install eslint 
   npm:
     name: eslint
