@@ -60,3 +60,8 @@
     state: latest
     global: yes
 
+- name: install bash-language-server
+  npm:
+    name: bash-language-server
+    state: latest
+    global: yes
