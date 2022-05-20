@@ -97,6 +97,15 @@
         - work-only
         - jira-cli
 
+    - name: glab
+      include_tasks:
+        file: tasks/glab.yml
+        apply:
+          tags: glab
+      tags:
+        - work-only
+        - glab
+
     - name: pip
       include_tasks:
         file: tasks/pip.yml
