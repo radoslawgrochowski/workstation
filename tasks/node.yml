@@ -54,3 +54,9 @@
     state: latest
     global: yes
 
+- name: install ansible-language-server 
+  npm:
+    name: '@ansible/ansible-language-server'
+    state: latest
+    global: yes
+
