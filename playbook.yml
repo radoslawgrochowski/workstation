@@ -33,7 +33,7 @@
             - dotfiles
       tags: always
 
-    - name: neovim 
+    - name: neovim
       include_tasks:
         file: tasks/neovim.yml
         apply:
@@ -73,7 +73,7 @@
             - productivity
       tags: always
 
-    - name: spotify 
+    - name: spotify
       include_tasks:
         file: tasks/spotify.yml
         apply:
@@ -85,14 +85,21 @@
       include_tasks:
         file: tasks/go.yml
         apply:
-          tags: go 
-      tags: go 
+          tags: go
+      tags: go
 
     - name: jira-cli
       include_tasks:
         file: tasks/jira-cli.yml
         apply:
-          tags: jira-cli 
+          tags: jira-cli
       tags:
-        - work-only 
+        - work-only
         - jira-cli
+
+    - name: pip
+      include_tasks:
+        file: tasks/pip.yml
+        apply:
+          tags: pip
+      tags: always

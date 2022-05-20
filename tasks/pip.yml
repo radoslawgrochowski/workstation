@@ -1,0 +1,9 @@
+- name: install pip
+  package:
+    name: python3-pip 
+    state: present
+
+- name: Install ansible-lint python package
+  pip:
+    name: ansible-lint
+
