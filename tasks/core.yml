@@ -26,6 +26,7 @@
       - kitty
       - htop
       - xclip
+      - autorandr
     state: latest
 
 - name: fonts
