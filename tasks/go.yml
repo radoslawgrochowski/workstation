@@ -2,7 +2,16 @@
   copy:
     dest: /etc/profile.d/go-lang-path.sh
     content: 'PATH=$PATH:/usr/local/go/bin'
-  
-- name: install golang 
+
+- name: install golang
   include_role:
     name: fubarhouse.golang
+  vars:
+    GOPATH: /home/radoslawgrochowski/go
+    GOROOT: /usr/local/go
+    go_install:
+    - repo: https://github.com/mattn/efm-langserver
+      dest: github.com/mattn/efm-langserver
+      version: v0.0.44
+      package: github.com/mattn/efm-langserver
+
