@@ -1,0 +1,6 @@
+- name: clone notes repo
+  become: true
+  become_user: radoslawgrochowski
+  ansible.builtin.git:
+    repo: https://github.com/radoslawgrochowski/notes.git
+    dest: ~/Projects/notes
