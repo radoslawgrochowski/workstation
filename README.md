@@ -8,14 +8,14 @@ and targeted at Ubuntu 20.04 LTS.
 ```shell
 $ sudo apt-get install -y ansible git sudo
 $ git -C ~/Projects/workstation pull || git clone https://github.com/radoslawgrochowski/workstation ~/Projects/workstation
-$ sudo ansible-playbook ~/Projects/workstation/playbook.yml
+$ make
 ````
 
 ## testing
 
 ### using docker
 ```sh
-$ docker build . -t workstation && docker run --rm -it workstation
+make test
 ```
 
 ## inspiration 

@@ -112,3 +112,10 @@
         apply:
           tags: pip
       tags: always
+
+    - name: repositories
+      include_tasks:
+        file: tasks/repositories.yml
+        apply:
+          tags: repositories
+      tags: repositories 

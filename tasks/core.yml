@@ -26,6 +26,8 @@
       - kitty
       - htop
       - xclip
+      - autorandr
+      - pavucontrol
     state: latest
 
 - name: fonts
