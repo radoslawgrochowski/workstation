@@ -18,4 +18,3 @@ test-ci:
 
 install:
 	sudo ansible-galaxy collection install community.general
-	sudo ansible-galaxy install -r requirements.yml

@@ -65,3 +65,9 @@
     name: bash-language-server
     state: latest
     global: yes
+
+- name: install vscode-langservers-extracted
+  npm:
+    name: vscode-langservers-extracted
+    state: latest
+    global: yes

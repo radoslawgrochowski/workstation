@@ -86,7 +86,7 @@
         file: tasks/go.yml
         apply:
           tags: go
-      tags: go
+      tags: always 
 
     - name: jira-cli
       include_tasks:

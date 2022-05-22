@@ -3,15 +3,20 @@
     dest: /etc/profile.d/go-lang-path.sh
     content: 'PATH=$PATH:/usr/local/go/bin'
 
-- name: install golang
-  include_role:
-    name: fubarhouse.golang
-  vars:
-    GOPATH: /home/radoslawgrochowski/go
-    GOROOT: /usr/local/go
-    go_install:
-    - repo: https://github.com/mattn/efm-langserver
-      dest: github.com/mattn/efm-langserver
-      version: v0.0.44
-      package: github.com/mattn/efm-langserver
+- name: check go bin
+  stat:
+    path: /usr/local/go
+  register: go
 
+- name: unarchive go 
+  unarchive: 
+    src: https://go.dev/dl/go1.18.2.linux-amd64.tar.gz
+    dest: /usr/local
+    remote_src: yes
+  when: not go.stat.exists
+
+- name: install efm
+  become: true
+  become_user: radoslawgrochowski
+  command: |
+    /usr/local/go/bin/go install github.com/mattn/efm-langserver@latest
