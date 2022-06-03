@@ -1,15 +1,15 @@
 - name: add go $PATH
   copy:
     dest: /etc/profile.d/go-lang-path.sh
-    content: 'PATH=$PATH:/usr/local/go/bin'
+    content: "PATH=$PATH:/usr/local/go/bin"
 
 - name: check go bin
   stat:
     path: /usr/local/go
   register: go
 
-- name: unarchive go 
-  unarchive: 
+- name: unarchive go
+  unarchive:
     src: https://go.dev/dl/go1.18.2.linux-amd64.tar.gz
     dest: /usr/local
     remote_src: yes
@@ -20,3 +20,9 @@
   become_user: radoslawgrochowski
   command: |
     /usr/local/go/bin/go install github.com/mattn/efm-langserver@latest
+
+- name: install gopls
+  become: true
+  become_user: radoslawgrochowski
+  command: |
+    /usr/local/go/bin/go install golang.org/x/tools/gopls@latest
