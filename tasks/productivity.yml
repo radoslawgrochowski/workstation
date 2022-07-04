@@ -22,5 +22,6 @@
       - google-drive-ocamlfuse
       - peek
       - vlc
+      - fzf
     state: latest
 
