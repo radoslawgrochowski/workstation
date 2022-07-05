@@ -24,13 +24,13 @@
     state: latest
     global: yes
 
-- name: install typescript 
+- name: install typescript
   npm:
     name: typescript
     state: latest
     global: yes
 
-- name: install typescript-language-server 
+- name: install typescript-language-server
   npm:
     name: typescript-language-server
     state: latest
@@ -42,21 +42,21 @@
     state: latest
     global: yes
 
-- name: install eslint 
+- name: install eslint
   npm:
     name: eslint
     state: latest
     global: yes
 
-- name: install prettier 
+- name: install prettier
   npm:
     name: prettier
     state: latest
     global: yes
 
-- name: install ansible-language-server 
+- name: install ansible-language-server
   npm:
-    name: '@ansible/ansible-language-server'
+    name: "@ansible/ansible-language-server"
     state: latest
     global: yes
 
@@ -69,5 +69,11 @@
 - name: install vscode-langservers-extracted
   npm:
     name: vscode-langservers-extracted
+    state: latest
+    global: yes
+
+- name: install emmet-ls
+  npm:
+    name: emmet-ls
     state: latest
     global: yes
