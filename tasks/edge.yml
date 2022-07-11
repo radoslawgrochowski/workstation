@@ -1,0 +1,25 @@
+- name: install dependencies for edge
+  package:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+      - wget
+    state: latest
+
+- name: add edge repo key
+  apt_key:
+    url: https://packages.microsoft.com/keys/microsoft.asc
+    state: present
+
+- name: add edge repo
+  apt_repository:
+    repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main'
+    state: present
+    update_cache: true
+
+- name: install edge 
+  package:
+    name: microsoft-edge-stable
+    state: latest
