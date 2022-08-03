@@ -65,6 +65,14 @@
             - chrome
       tags: always
 
+    - name: edge
+      include_tasks:
+        file: tasks/edge.yml
+        apply:
+          tags:
+            - edge
+      tags: always
+
     - name: productivity
       include_tasks:
         file: tasks/productivity.yml

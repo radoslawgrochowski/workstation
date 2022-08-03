@@ -23,5 +23,6 @@
       - peek
       - vlc
       - fzf
+      - gimp
     state: latest
 
