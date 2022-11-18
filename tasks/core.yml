@@ -1,3 +1,9 @@
+- name: add git-core repo 
+  apt_repository:
+    codename: focal
+    repo: ppa:git-core/ppa
+    state: present
+
 - name: add core packages
   package:
     name:
