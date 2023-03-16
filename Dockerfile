@@ -1,4 +1,4 @@
-FROM ubuntu:focal AS base
+FROM ubuntu:jammy AS base
 ENV DEBIAN_FRONTEND=noninteractive 
 ENV TZ=Europe/Warsaw
 RUN apt-get update
